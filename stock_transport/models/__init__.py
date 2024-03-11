@@ -1,4 +1,4 @@
 from . import custom_fleet
-from . import dock_fleet
-from . import settings
-from . import custom_volume
+from . import stock_picking_batch
+from . import stock_picking
+from . import custom_dock

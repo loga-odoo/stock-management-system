@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="stock_picking_batch_form" model="ir.ui.view">
+            <field name="name">stock.picking.batch.form</field>
+            <field name="model">stock.picking.batch</field>
+            <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='scheduled_date']" position="after">
+                    <field name="dock_id"/>
+                    <field name="vehicle_id" placeholder = "Third party provider"/>
+                    <field name="vehicle_category_id" placeholder = "semi-truck(kg, m^3)"/>
+                    
+                        <label for='total_weight' string='Weight'/>
+                        <div class='d-flex flex-row justify-content-between'>
+                            <div class='d-flex flex-row gap-4'>
+                                <div class='d-flex flex-row gap-1'>
+                                    <field name='total_weight' nolabel='1' style="color: red" />
+                                    <span style="color: red">kg</span>
+                                </div>
+                                <field name='weight' widget='progressbar' nolabel='1' />
+                            </div>
+                        </div>
+                        <label for='total_volume' string = 'Volume'/>
+                        <div class='d-flex flex-row justify-content-between'>
+                            <div class='d-flex flex-row gap-4'>
+                                <div class='d-flex flex-row gap-1'>
+                                    <field name='total_volume' nolabel='1' style="color: red" />
+                                    <span style="color: red">&#13221;</span>
+                                </div>
+                                <field name='volume' widget='progressbar' nolabel='1' />
+                            </div>
+                        </div>
+     
+                </xpath>   
+                   
+            </field>
+    </record>   
+    
+    </data>
+
+</odoo>
